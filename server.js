@@ -11,8 +11,11 @@ app.use(express.urlencoded());
 app.use(express.json());
 app.use(cors());
 
+//#region Area de metodos
 
 app.use('/User', Users)
+
+//#endregion
 
 //#region  AREA DE BASE DE DATOS DE MONGO
 
