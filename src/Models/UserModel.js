@@ -9,7 +9,6 @@ const UserSchema = new Schema({
     Password: { type: String, default: '', required: false },
     Phone: { type: String, required: true },
     Role: { type: Number, default: 2, required: true }, //1:Admin 2:Usuario
-    Address: {type: String, default: '', required: false},
 })
 
 const User = mongoose.model('user', UserSchema)
