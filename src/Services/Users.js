@@ -11,6 +11,17 @@ async function getUserData(id) {
 
 }
 
+async function deleteUser(id) {
+    try {
+        let retrieved = await UserModel.deleteOne({ Email: id })
+        return { retrieved }
+    } catch (error) {
+        return { error }
+    }
+
+}
+
+
 async function getnotAdmins() {
     try {
         let retrieved = await UserModel.find({ Role: 2 })
@@ -23,5 +34,6 @@ async function getnotAdmins() {
 
 module.exports = {
     getUserData,
-    getnotAdmins
+    getnotAdmins,
+    deleteUser
 }

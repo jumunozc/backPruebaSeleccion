@@ -17,6 +17,20 @@ router.post('/getUser', async function (req, res) {
 
 })
 
+router.post('/delUser', async function (req, res) {
+
+    await user.deleteUser(req.body.Email)
+        .then((data) => {
+            return data
+        }).then((result) => {
+            return res.status(200).json({
+                esExitoso: true,
+                data: result.retrieved
+            })
+        })
+
+})
+
 router.get('/getnonAdmins', async function (req, res) {
 
     await user.getnotAdmins()
