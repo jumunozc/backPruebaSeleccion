@@ -5,13 +5,14 @@ const mongoose = require('mongoose');
 const Resource = require('resourcejs');
 
 var UserModel = require('./src/Models/UserModel')
+var Users = require('./src/Controllers/UserMethods')
 
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(cors());
 
 
-
+app.use('/User', Users)
 
 //#region  AREA DE BASE DE DATOS DE MONGO
 
