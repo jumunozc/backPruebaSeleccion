@@ -17,4 +17,18 @@ router.post('/getUser', async function (req, res) {
 
 })
 
+router.get('/getnonAdmins', async function (req, res) {
+
+    await user.getnotAdmins()
+        .then((data) => {
+            return data
+        }).then((result) => {
+            return res.status(200).json({
+                esExitoso: true,
+                data: result.retrieved
+            })
+        })
+
+})
+
 module.exports = router

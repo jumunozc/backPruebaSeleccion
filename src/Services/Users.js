@@ -11,6 +11,17 @@ async function getUserData(id) {
 
 }
 
+async function getnotAdmins() {
+    try {
+        let retrieved = await UserModel.find({ Role: 2 })
+        return { retrieved }
+    } catch (error) {
+        return { error }
+    }
+
+}
+
 module.exports = {
-    getUserData
+    getUserData,
+    getnotAdmins
 }

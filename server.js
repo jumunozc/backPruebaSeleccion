@@ -17,7 +17,7 @@ app.use('/User', Users)
 //#region  AREA DE BASE DE DATOS DE MONGO
 
 mongoose
-    .connect("mongodb+srv://jmunoz:!QAZxsw2@testseleccion.0jfdxzz.mongodb.net/?retryWrites=true&w=majority", {
+    .connect(process.env.MONGO_URL_LOCAL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

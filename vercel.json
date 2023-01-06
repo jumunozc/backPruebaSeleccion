@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "test",
+    "name": "Back para prueba",
     "builds": [
        { "src": "server.js", "use": "@vercel/node" }
     ],
