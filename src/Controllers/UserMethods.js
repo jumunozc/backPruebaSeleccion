@@ -31,6 +31,20 @@ router.post('/delUser', async function (req, res) {
 
 })
 
+router.post('/updateUser', async function (req, res) {
+
+    await user.updateUser(req.body)
+        .then((data) => {
+            return data
+        }).then((result) => {
+            return res.status(200).json({
+                esExitoso: true,
+                data: result.retrieved
+            })
+        })
+
+})
+
 router.get('/getnonAdmins', async function (req, res) {
 
     await user.getnotAdmins()

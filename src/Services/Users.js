@@ -32,8 +32,25 @@ async function getnotAdmins() {
 
 }
 
+async function updateUser(data) {
+
+    try {
+        let retrieved = await UserModel.updateOne({ Email: data.email },
+            {
+                Names: data.name,
+                Surnames: data.surname,
+                Phone: data.phone
+            })
+        return { retrieved }
+    } catch (error) {
+        console.log(error)
+        return { error }
+    }
+}
+
 module.exports = {
     getUserData,
     getnotAdmins,
-    deleteUser
+    deleteUser,
+    updateUser
 }
