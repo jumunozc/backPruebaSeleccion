@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 
-
+console.log("ajaaa");
 
 //#region  AREA DE BASE DE DATOS DE MONGO
 
